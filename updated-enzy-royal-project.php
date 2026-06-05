@@ -8,16 +8,16 @@ $message = "Updated Enzy Royal project";
 
 $subject = "Portfolio Contact Form";
 
-$body = "Name: Daniela";
-$body .= "Email: sommaxruby@gmail.com";
-$body .= "Message: php mailer";
+$body = "Name: " . $name . "\n";
+$body .= "Email: " . $email . "\n\n";
+$body .= "Message: " . $message;
 
-$headers = "From: sommaxruby@gmail.com";
+$headers = "From: " . $email;
 
-to(mail($to, $subject, $body, $headers))
- {"Message sent successfully!";}
-} {
- "Failed to send message.";
+if(mail($to, $subject, $body, $headers)) {
+    echo "Message sent successfully!";
+} else {
+    echo "Failed to send message.";
 }
 
 ?>
